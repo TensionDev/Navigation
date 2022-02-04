@@ -8,5 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [v0.1.0-alpha] - 2022-02-04
+[v0.1.0-alpha](https://github.com/TensionDev/Navigation/releases/tag/v0.1.0-alpha)
+
 ### Added
 - Added Rhumbline Computation.
+- Added Great Circle Computation.
