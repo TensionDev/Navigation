@@ -2,8 +2,14 @@
 
 namespace TensionDev.Maritime.Navigation
 {
+    /// <summary>
+    /// Computation dealing with Great Circle
+    /// </summary>
     public class GreatCircle
     {
+        /// <summary>
+        /// Average Radius of the Earth
+        /// </summary>
         public const Double EARTH_RADIUS_M = 6371000.0;
 
         /// <summary>

@@ -2,6 +2,9 @@
 
 namespace TensionDev.Maritime.Navigation
 {
+    /// <summary>
+    /// Computation for Closest Point of Approach and Time to Closest Point of Approach
+    /// </summary>
     public class ClosestPointOfApproach
     {
         /// <summary>

@@ -15,6 +15,9 @@ namespace TensionDev.Maritime.Navigation
 
         private const double KNOTS_METRES_PER_SECOND = 0.514444;
 
+        /// <summary>
+        /// Default Constructor initialised to 0 for all variables
+        /// </summary>
         public VesselTrack()
         {
             vesselCoordinates = new GeodeticCoord();

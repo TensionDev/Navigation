@@ -2,8 +2,14 @@
 
 namespace TensionDev.Maritime.Navigation
 {
+    /// <summary>
+    /// Computation dealing with Rhumbline
+    /// </summary>
     public class Rhumbline
     {
+        /// <summary>
+        /// Average Radius of the Earth
+        /// </summary>
         public const Double EARTH_RADIUS_M = 6371000.0;
 
         /// <summary>

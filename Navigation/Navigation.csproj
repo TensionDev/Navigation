@@ -7,7 +7,7 @@
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 	  <PackageId>TensionDev.Maritime.Navigation</PackageId>
-	  <Version>0.1.0-alpha</Version>
+	  <Version>0.1.0</Version>
 	  <Authors>TensionDev amsga</Authors>
 	  <Company>TensionDev</Company>
 	  <Product>TensionDev.Maritime.Navigation</Product>
@@ -24,6 +24,7 @@
 	  <FileVersion>0.1.0.0</FileVersion>
 	  <IncludeSymbols>true</IncludeSymbols>
 	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
 </Project>
