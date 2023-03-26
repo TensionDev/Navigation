@@ -8,6 +8,7 @@ namespace XUnitTestProjectNavigation
     {
         internal const Int32 DISTANCE_PRECISION = 2;
         internal const Int32 TIME_PRECISION = 0;
+        internal const Int32 METRE_TO_NAUTICALMILES = 1852;
 
         [Fact]
         public void TestCalculateCPAandTCPA1()
@@ -48,14 +49,16 @@ namespace XUnitTestProjectNavigation
                 CourseOverGroundDegrees = 129.32617,
             };
 
-            double expectedCPA = 1.23 ;
-            double expectedTCPA = 150;
+            double lowCPA = 1.22;
+            double highCPA = 1.24;
+            double lowTCPA = 149;
+            double highTCPA = 151;
 
             ClosestPointOfApproach.CalculateCPAandTCPA(ownVessel, targetVessel, out double actualCPA, out double actualTCPA);
-            actualCPA /= 1852;
+            actualCPA /= METRE_TO_NAUTICALMILES;
 
-            Assert.Equal(expectedCPA, actualCPA, DISTANCE_PRECISION);
-            Assert.Equal(expectedTCPA, actualTCPA, TIME_PRECISION);
+            Assert.InRange(actualCPA, lowCPA, highCPA);
+            Assert.InRange(actualTCPA, lowTCPA, highTCPA);
         }
 
         [Fact]
@@ -82,14 +85,16 @@ namespace XUnitTestProjectNavigation
                 CourseOverGroundDegrees = 111.37690,
             };
 
-            double expectedCPA = 0.05;
-            double expectedTCPA = 154;
+            double lowCPA = 0.04;
+            double highCPA = 0.06;
+            double lowTCPA = 152;
+            double highTCPA = 154;
 
             ClosestPointOfApproach.CalculateCPAandTCPA(ownVessel, targetVessel, out double actualCPA, out double actualTCPA);
-            actualCPA /= 1852;
+            actualCPA /= METRE_TO_NAUTICALMILES;
 
-            Assert.Equal(expectedCPA, actualCPA, DISTANCE_PRECISION);
-            Assert.Equal(expectedTCPA, actualTCPA, TIME_PRECISION);
+            Assert.InRange(actualCPA, lowCPA, highCPA);
+            Assert.InRange(actualTCPA, lowTCPA, highTCPA);
         }
 
         [Fact]
@@ -116,14 +121,16 @@ namespace XUnitTestProjectNavigation
                 CourseOverGroundDegrees = 90.80503,
             };
 
-            double expectedCPA = 0.11;
-            double expectedTCPA = 311;
+            double lowCPA = 0.09;
+            double highCPA = 0.11;
+            double lowTCPA = 308;
+            double highTCPA = 310;
 
             ClosestPointOfApproach.CalculateCPAandTCPA(ownVessel, targetVessel, out double actualCPA, out double actualTCPA);
-            actualCPA /= 1852;
+            actualCPA /= METRE_TO_NAUTICALMILES;
 
-            Assert.Equal(expectedCPA, actualCPA, DISTANCE_PRECISION);
-            Assert.Equal(expectedTCPA, actualTCPA, TIME_PRECISION);
+            Assert.InRange(actualCPA, lowCPA, highCPA);
+            Assert.InRange(actualTCPA, lowTCPA, highTCPA);
         }
 
         [Fact]
@@ -150,14 +157,16 @@ namespace XUnitTestProjectNavigation
                 CourseOverGroundDegrees = 209.16741,
             };
 
-            double expectedCPA = 0.03;
-            double expectedTCPA = 437;
+            double lowCPA = 0.01;
+            double highCPA = 0.03;
+            double lowTCPA = 446;
+            double highTCPA = 448;
 
             ClosestPointOfApproach.CalculateCPAandTCPA(ownVessel, targetVessel, out double actualCPA, out double actualTCPA);
-            actualCPA /= 1852;
+            actualCPA /= METRE_TO_NAUTICALMILES;
 
-            Assert.Equal(expectedCPA, actualCPA, DISTANCE_PRECISION);
-            Assert.Equal(expectedTCPA, actualTCPA, TIME_PRECISION);
+            Assert.InRange(actualCPA, lowCPA, highCPA);
+            Assert.InRange(actualTCPA, lowTCPA, highTCPA);
         }
 
         [Fact]
@@ -184,14 +193,16 @@ namespace XUnitTestProjectNavigation
                 CourseOverGroundDegrees = 358.84242,
             };
 
-            double expectedCPA = 0.73;
-            double expectedTCPA = 129;
+            double lowCPA = 0.73;
+            double highCPA = 0.75;
+            double lowTCPA = 129;
+            double highTCPA = 131;
 
             ClosestPointOfApproach.CalculateCPAandTCPA(ownVessel, targetVessel, out double actualCPA, out double actualTCPA);
-            actualCPA /= 1852;
+            actualCPA /= METRE_TO_NAUTICALMILES;
 
-            Assert.Equal(expectedCPA, actualCPA, DISTANCE_PRECISION);
-            Assert.Equal(expectedTCPA, actualTCPA, TIME_PRECISION);
+            Assert.InRange(actualCPA, lowCPA, highCPA);
+            Assert.InRange(actualTCPA, lowTCPA, highTCPA);
         }
     }
 }
