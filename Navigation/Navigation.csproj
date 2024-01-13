@@ -1,30 +1,42 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-	  <AssemblyName>TensionDev.Maritime.Navigation</AssemblyName>
-	  <RootNamespace>TensionDev.Maritime.Navigation</RootNamespace>
-	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-	  <PackageId>TensionDev.Maritime.Navigation</PackageId>
-	  <Version>0.1.0</Version>
-	  <Authors>TensionDev amsga</Authors>
-	  <Company>TensionDev</Company>
-	  <Product>TensionDev.Maritime.Navigation</Product>
-	  <Description>A project to provide tools for computation for Maritime Navigation.</Description>
-	  <Copyright>Copyright (c) TensionDev 2021 - 2022</Copyright>
-	  <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-	  <PackageProjectUrl>https://github.com/TensionDev/Navigation</PackageProjectUrl>
-	  <RepositoryUrl>https://github.com/TensionDev/Navigation</RepositoryUrl>
-	  <RepositoryType>git</RepositoryType>
-	  <PackageTags>Maritime</PackageTags>
-	  <PackageReleaseNotes>Initial project release</PackageReleaseNotes>
-	  <NeutralLanguage>en-SG</NeutralLanguage>
-	  <AssemblyVersion>0.1.0.0</AssemblyVersion>
-	  <FileVersion>0.1.0.0</FileVersion>
-	  <IncludeSymbols>true</IncludeSymbols>
-	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <AssemblyName>TensionDev.Maritime.Navigation</AssemblyName>
+    <RootNamespace>TensionDev.Maritime.Navigation</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageId>TensionDev.Maritime.Navigation</PackageId>
+    <Version>0.2.0-alpha</Version>
+    <Authors>TensionDev amsga</Authors>
+    <Company>TensionDev</Company>
+    <Product>TensionDev.Maritime.Navigation</Product>
+    <Description>A project to provide tools for computation for Maritime Navigation.</Description>
+    <Copyright>Copyright (c) TensionDev 2021</Copyright>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/TensionDev/Navigation</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TensionDev/Navigation</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Maritime</PackageTags>
+    <PackageReleaseNotes>Initial project release</PackageReleaseNotes>
+    <NeutralLanguage>en-SG</NeutralLanguage>
+    <AssemblyVersion>0.2.0.0</AssemblyVersion>
+    <FileVersion>0.2.0.0</FileVersion>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TensionDev.CoordinateSystems" Version="0.1.0-alpha" />
+  </ItemGroup>
 
 </Project>

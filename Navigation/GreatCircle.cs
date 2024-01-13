@@ -1,11 +1,12 @@
 ﻿using System;
+using TensionDev.CoordinateSystems;
 
 namespace TensionDev.Maritime.Navigation
 {
     /// <summary>
     /// Computation dealing with Great Circle
     /// </summary>
-    public class GreatCircle
+    public static class GreatCircle
     {
         /// <summary>
         /// Average Radius of the Earth
@@ -19,15 +20,15 @@ namespace TensionDev.Maritime.Navigation
         /// <param name="bearingDegrees">Bearing in Degrees</param>
         /// <param name="rangeMetres">Range in Metres</param>
         /// <returns></returns>
-        public static GeodeticCoord PositionFromPoint(GeodeticCoord startPosition, Double bearingDegrees, Double rangeMetres)
+        public static GeographicCoordinateSystem PositionFromPoint(GeographicCoordinateSystem startPosition, Double bearingDegrees, Double rangeMetres)
         {
             Double endLatitudeRad = Math.Asin(Math.Sin(startPosition.LatitudeDecimalRadians) * Math.Cos(rangeMetres / EARTH_RADIUS_M) +
-                            Math.Cos(startPosition.LatitudeDecimalRadians) * Math.Sin(rangeMetres / EARTH_RADIUS_M) * Math.Cos(bearingDegrees * Math.PI / 180.0)); ;
+                            Math.Cos(startPosition.LatitudeDecimalRadians) * Math.Sin(rangeMetres / EARTH_RADIUS_M) * Math.Cos(bearingDegrees * Math.PI / 180.0));
 
             Double endLongitudeRad = startPosition.LongitudeDecimalRadians + Math.Atan2(Math.Sin(bearingDegrees * Math.PI / 180.0) * Math.Sin(rangeMetres / EARTH_RADIUS_M) * Math.Cos(startPosition.LatitudeDecimalRadians),
                                         Math.Cos(rangeMetres / EARTH_RADIUS_M) - Math.Sin(startPosition.LatitudeDecimalRadians) * Math.Sin(endLatitudeRad));
 
-            GeodeticCoord endPosition = new GeodeticCoord()
+            GeographicCoordinateSystem endPosition = new GeographicCoordinateSystem()
             {
                 LatitudeDecimalRadians = endLatitudeRad,
                 LongitudeDecimalRadians = endLongitudeRad,
@@ -42,7 +43,7 @@ namespace TensionDev.Maritime.Navigation
         /// <param name="startPosition">Geodetic Start Position</param>
         /// <param name="endPosition">Geodetic End Position</param>
         /// <returns>Distance in Metres</returns>
-        public static Double DistanceFromPoint(GeodeticCoord startPosition, GeodeticCoord endPosition)
+        public static Double DistanceFromPoint(GeographicCoordinateSystem  startPosition, GeographicCoordinateSystem endPosition)
         {
             Double phi = endPosition.LatitudeDecimalRadians - startPosition.LatitudeDecimalRadians;
             Double lambda = endPosition.LongitudeDecimalRadians - startPosition.LongitudeDecimalRadians;

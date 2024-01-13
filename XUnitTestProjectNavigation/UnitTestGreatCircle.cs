@@ -1,4 +1,5 @@
 ﻿using System;
+using TensionDev.CoordinateSystems;
 using TensionDev.Maritime.Navigation;
 using Xunit;
 
@@ -12,7 +13,7 @@ namespace XUnitTestProjectNavigation
         [Fact]
         public void TestPositionFromPoint1()
         {
-            GeodeticCoord startPosition = new GeodeticCoord()
+            GeographicCoordinateSystem startPosition = new GeographicCoordinateSystem()
             {
                 LatitudeDecimalDegrees = 51.47788,
                 LongitudeDecimalDegrees = -0.00147,
@@ -20,13 +21,13 @@ namespace XUnitTestProjectNavigation
             Double bearingDegrees = 300.7;
             Double rangeMetres = 7794.0;
 
-            GeodeticCoord expectedPosition = new GeodeticCoord()
+            GeographicCoordinateSystem expectedPosition = new GeographicCoordinateSystem()
             {
                 LatitudeDecimalDegrees = 51.5136,
                 LongitudeDecimalDegrees = -0.0983,
             };
 
-            GeodeticCoord actualPosition = GreatCircle.PositionFromPoint(startPosition, bearingDegrees, rangeMetres);
+            GeographicCoordinateSystem actualPosition = GreatCircle.PositionFromPoint(startPosition, bearingDegrees, rangeMetres);
 
             Assert.Equal(expectedPosition.LatitudeDecimalDegrees, actualPosition.LatitudeDecimalDegrees, POSITION_PRECISION);
             Assert.Equal(expectedPosition.LongitudeDecimalDegrees, actualPosition.LongitudeDecimalDegrees, POSITION_PRECISION);
@@ -35,12 +36,12 @@ namespace XUnitTestProjectNavigation
         [Fact]
         public void TestDistanceFromPoint1()
         {
-            GeodeticCoord startPosition = new GeodeticCoord()
+            GeographicCoordinateSystem startPosition = new GeographicCoordinateSystem()
             {
                 LatitudeDecimalDegrees = 51.127,
                 LongitudeDecimalDegrees = 1.338,
             };
-            GeodeticCoord endPosition = new GeodeticCoord()
+            GeographicCoordinateSystem endPosition = new GeographicCoordinateSystem()
             {
                 LatitudeDecimalDegrees = 50.964,
                 LongitudeDecimalDegrees = 1.853,

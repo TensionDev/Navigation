@@ -1,4 +1,5 @@
 ﻿using System;
+using TensionDev.CoordinateSystems;
 using TensionDev.Maritime.Navigation;
 using Xunit;
 
@@ -30,7 +31,7 @@ namespace XUnitTestProjectNavigation
         {
             VesselTrack ownVessel = new VesselTrack()
             {
-                VesselCoordinates = new GeodeticCoord()
+                VesselCoordinates = new GeographicCoordinateSystem()
                 {
                     LatitudeDecimalRadians = 0.02203,
                     LongitudeDecimalRadians = 1.81450,
@@ -40,7 +41,7 @@ namespace XUnitTestProjectNavigation
             };
             VesselTrack targetVessel = new VesselTrack()
             {
-                VesselCoordinates = new GeodeticCoord()
+                VesselCoordinates = new GeographicCoordinateSystem()
                 {
                     LatitudeDecimalRadians = 0.02239,
                     LongitudeDecimalRadians = 1.81455,
@@ -66,7 +67,7 @@ namespace XUnitTestProjectNavigation
         {
             VesselTrack ownVessel = new VesselTrack()
             {
-                VesselCoordinates = new GeodeticCoord()
+                VesselCoordinates = new GeographicCoordinateSystem()
                 {
                     LatitudeDecimalRadians = 0.02203,
                     LongitudeDecimalRadians = 1.81450,
@@ -76,7 +77,7 @@ namespace XUnitTestProjectNavigation
             };
             VesselTrack targetVessel = new VesselTrack()
             {
-                VesselCoordinates = new GeodeticCoord()
+                VesselCoordinates = new GeographicCoordinateSystem()
                 {
                     LatitudeDecimalRadians = 0.02203,
                     LongitudeDecimalRadians = 1.81446,
@@ -102,7 +103,7 @@ namespace XUnitTestProjectNavigation
         {
             VesselTrack ownVessel = new VesselTrack()
             {
-                VesselCoordinates = new GeodeticCoord()
+                VesselCoordinates = new GeographicCoordinateSystem()
                 {
                     LatitudeDecimalRadians = 0.02203,
                     LongitudeDecimalRadians = 1.81450,
@@ -112,7 +113,7 @@ namespace XUnitTestProjectNavigation
             };
             VesselTrack targetVessel = new VesselTrack()
             {
-                VesselCoordinates = new GeodeticCoord()
+                VesselCoordinates = new GeographicCoordinateSystem()
                 {
                     LatitudeDecimalRadians = 0.02202,
                     LongitudeDecimalRadians = 1.81422,
@@ -138,7 +139,7 @@ namespace XUnitTestProjectNavigation
         {
             VesselTrack ownVessel = new VesselTrack()
             {
-                VesselCoordinates = new GeodeticCoord()
+                VesselCoordinates = new GeographicCoordinateSystem()
                 {
                     LatitudeDecimalRadians = 0.02196,
                     LongitudeDecimalRadians = 1.81446,
@@ -148,7 +149,7 @@ namespace XUnitTestProjectNavigation
             };
             VesselTrack targetVessel = new VesselTrack()
             {
-                VesselCoordinates = new GeodeticCoord()
+                VesselCoordinates = new GeographicCoordinateSystem()
                 {
                     LatitudeDecimalRadians = 0.02212,
                     LongitudeDecimalRadians = 1.81454,
@@ -174,7 +175,7 @@ namespace XUnitTestProjectNavigation
         {
             VesselTrack ownVessel = new VesselTrack()
             {
-                VesselCoordinates = new GeodeticCoord()
+                VesselCoordinates = new GeographicCoordinateSystem()
                 {
                     LatitudeDecimalRadians = 0.02196,
                     LongitudeDecimalRadians = 1.81446,
@@ -184,7 +185,7 @@ namespace XUnitTestProjectNavigation
             };
             VesselTrack targetVessel = new VesselTrack()
             {
-                VesselCoordinates = new GeodeticCoord()
+                VesselCoordinates = new GeographicCoordinateSystem()
                 {
                     LatitudeDecimalRadians = 0.02190,
                     LongitudeDecimalRadians = 1.81424,

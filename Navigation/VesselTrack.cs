@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TensionDev.CoordinateSystems;
 
 namespace TensionDev.Maritime.Navigation
 {
@@ -9,7 +10,7 @@ namespace TensionDev.Maritime.Navigation
     /// </summary>
     public class VesselTrack
     {
-        private GeodeticCoord vesselCoordinates;
+        private GeographicCoordinateSystem vesselCoordinates;
         private double speedOverGround;
         private double courseOverGround;
 
@@ -20,7 +21,7 @@ namespace TensionDev.Maritime.Navigation
         /// </summary>
         public VesselTrack()
         {
-            vesselCoordinates = new GeodeticCoord();
+            vesselCoordinates = new GeographicCoordinateSystem();
             speedOverGround = 0.0;
             courseOverGround = 0.0;
         }
@@ -28,7 +29,7 @@ namespace TensionDev.Maritime.Navigation
         /// <summary>
         /// Vessel Coordinates
         /// </summary>
-        public GeodeticCoord VesselCoordinates { get => vesselCoordinates; set => vesselCoordinates = value; }
+        public GeographicCoordinateSystem VesselCoordinates { get => vesselCoordinates; set => vesselCoordinates = value; }
 
         /// <summary>
         /// Speed Over Ground in Knots

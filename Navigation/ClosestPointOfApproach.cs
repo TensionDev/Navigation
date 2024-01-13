@@ -5,7 +5,7 @@ namespace TensionDev.Maritime.Navigation
     /// <summary>
     /// Computation for Closest Point of Approach and Time to Closest Point of Approach
     /// </summary>
-    public class ClosestPointOfApproach
+    public static class ClosestPointOfApproach
     {
         /// <summary>
         /// Calculates the Closest Point of Approach (CPA) and Time to Closest Point of Approach (TCPA).
@@ -23,7 +23,7 @@ namespace TensionDev.Maritime.Navigation
             double dRelativePosY = Math.Cos(bearingDegrees / 180.0 * Math.PI) * distanceMetres;
 
             double OwnX = Math.Sin(ownVessel.CourseOverGroundRadians) * ownVessel.SpeedOverGroundMetresPerSecond;
-            double OwnY = Math.Cos(ownVessel.CourseOverGroundRadians) * ownVessel.SpeedOverGroundMetresPerSecond; ;
+            double OwnY = Math.Cos(ownVessel.CourseOverGroundRadians) * ownVessel.SpeedOverGroundMetresPerSecond;
             double ObjectX = Math.Sin(targetVessel.CourseOverGroundRadians) * targetVessel.SpeedOverGroundMetresPerSecond;
             double ObjectY = Math.Cos(targetVessel.CourseOverGroundRadians) * targetVessel.SpeedOverGroundMetresPerSecond;
             double RelX = ObjectX - OwnX;

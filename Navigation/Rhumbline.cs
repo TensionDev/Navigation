@@ -1,11 +1,12 @@
 ﻿using System;
+using TensionDev.CoordinateSystems;
 
 namespace TensionDev.Maritime.Navigation
 {
     /// <summary>
     /// Computation dealing with Rhumbline
     /// </summary>
-    public class Rhumbline
+    public static class Rhumbline
     {
         /// <summary>
         /// Average Radius of the Earth
@@ -19,7 +20,7 @@ namespace TensionDev.Maritime.Navigation
         /// <param name="bearingDegrees">Bearing in Degrees</param>
         /// <param name="distanceMetres">Distance in Metres</param>
         /// <returns>New Position</returns>
-        public static GeodeticCoord PositionFromPoint(GeodeticCoord startPosition, Double bearingDegrees, Double distanceMetres)
+        public static GeographicCoordinateSystem PositionFromPoint(GeographicCoordinateSystem startPosition, Double bearingDegrees, Double distanceMetres)
         {
             Double delta = distanceMetres / EARTH_RADIUS_M;
             Double phi = delta * Math.Cos(bearingDegrees * Math.PI / 180.0);
@@ -37,7 +38,7 @@ namespace TensionDev.Maritime.Navigation
             if (Math.Abs(endLongitudeRad) > Math.PI)
                 endLongitudeRad = endLongitudeRad > 0 ? 2 * Math.PI - endLongitudeRad : (2 * -Math.PI) - endLongitudeRad;
 
-            GeodeticCoord endPosition = new GeodeticCoord()
+            GeographicCoordinateSystem endPosition = new GeographicCoordinateSystem()
             {
                 LatitudeDecimalRadians = endLatitudeRad,
                 LongitudeDecimalRadians = endLongitudeRad,
@@ -52,7 +53,7 @@ namespace TensionDev.Maritime.Navigation
         /// <param name="startPosition">Geodetic Start Position</param>
         /// <param name="endPosition">Geodetic End Position</param>
         /// <returns>Bearing in Degrees</returns>
-        public static Double BearingFromPoint(GeodeticCoord startPosition, GeodeticCoord endPosition)
+        public static Double BearingFromPoint(GeographicCoordinateSystem startPosition, GeographicCoordinateSystem endPosition)
         {
             Double psi = Math.Log(Math.Tan(endPosition.LatitudeDecimalRadians / 2 + Math.PI / 4) / Math.Tan(startPosition.LatitudeDecimalRadians / 2 + Math.PI / 4));
 
@@ -75,7 +76,7 @@ namespace TensionDev.Maritime.Navigation
         /// <param name="startPosition">Geodetic Start Position</param>
         /// <param name="endPosition">Geodetic End Position</param>
         /// <returns>Distance in Metres</returns>
-        public static Double DistanceFromPoint(GeodeticCoord startPosition, GeodeticCoord endPosition)
+        public static Double DistanceFromPoint(GeographicCoordinateSystem startPosition, GeographicCoordinateSystem endPosition)
         {
             Double phi = endPosition.LatitudeDecimalRadians - startPosition.LatitudeDecimalRadians;
             Double psi = Math.Log(Math.Tan(endPosition.LatitudeDecimalRadians / 2 + Math.PI / 4) / Math.Tan(startPosition.LatitudeDecimalRadians / 2 + Math.PI / 4));

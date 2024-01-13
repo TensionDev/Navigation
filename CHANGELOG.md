@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [v0.2.0-alpha] - 2024-01-13
+[v0.2.0-alpha](https://github.com/TensionDev/Navigation/releases/tag/v0.2.0-alpha)
+
+### Changed
+- Changed implementation to use TensionDev.CoordinateSystems for location information.
+
 ## [v0.1.0] - 2022-02-09
 [v0.1.0](https://github.com/TensionDev/Navigation/releases/tag/v0.1.0)
 
