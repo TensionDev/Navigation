@@ -36,7 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="TensionDev.CoordinateSystems" Version="0.1.0-alpha" />
+    <PackageReference Include="TensionDev.CoordinateSystems" Version="0.1.0" />
   </ItemGroup>
 
 </Project>
