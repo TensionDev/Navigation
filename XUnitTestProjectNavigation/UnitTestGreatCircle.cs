@@ -5,8 +5,10 @@ using Xunit;
 
 namespace XUnitTestProjectNavigation
 {
-    public class UnitTestGreatCircle
+    public class UnitTestGreatCircle : IDisposable
     {
+        private bool disposedValue;
+
         internal const Int32 POSITION_PRECISION = 4;
         internal const Int32 DISTANCE_PRECISION = 0;
 
@@ -52,6 +54,35 @@ namespace XUnitTestProjectNavigation
             Double actualDistance = GreatCircle.DistanceFromPoint(startPosition, endPosition);
 
             Assert.Equal(expectedDistance, actualDistance, DISTANCE_PRECISION);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    // TODO: dispose managed state (managed objects)
+                }
+
+                // TODO: free unmanaged resources (unmanaged objects) and override finalizer
+                // TODO: set large fields to null
+                disposedValue = true;
+            }
+        }
+
+        // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
+        // ~UnitTestGreatCircle()
+        // {
+        //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+        //     Dispose(disposing: false);
+        // }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }

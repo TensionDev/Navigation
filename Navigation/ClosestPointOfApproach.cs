@@ -30,7 +30,7 @@ namespace TensionDev.Maritime.Navigation
             double RelY = ObjectY - OwnY;
             double dRelativeSOG = Math.Sqrt((RelX * RelX) + (RelY * RelY));
 
-            if (dRelativeSOG == 0.0)
+            if (dRelativeSOG <= double.Epsilon)
             {
                 closestPointOfApproachMetres = distanceMetres;
                 timeToClosestPointOfApproachSeconds = 0.0;
@@ -38,13 +38,13 @@ namespace TensionDev.Maritime.Navigation
                 return;
             }
 
-            if (RelY == 0.0)
+            if (Math.Abs(RelY) <= double.Epsilon)
             {
                 closestPointOfApproachMetres = dRelativePosX;
                 timeToClosestPointOfApproachSeconds = (dRelativePosX / RelX);
 
             }
-            else if (RelX == 0.0)
+            else if (Math.Abs(RelX) <= double.Epsilon)
             {
                 closestPointOfApproachMetres = dRelativePosY;
                 timeToClosestPointOfApproachSeconds = (dRelativePosY / RelY);
