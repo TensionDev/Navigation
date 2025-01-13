@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageId>TensionDev.Maritime.Navigation</PackageId>
-    <Version>0.2.1-alpha</Version>
+    <Version>0.2.1</Version>
     <Authors>TensionDev amsga</Authors>
     <Company>TensionDev</Company>
     <Product>TensionDev.Maritime.Navigation</Product>
@@ -36,7 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="TensionDev.CoordinateSystems" Version="0.1.0" />
+    <PackageReference Include="TensionDev.CoordinateSystems" Version="0.1.1" />
   </ItemGroup>
 
 </Project>

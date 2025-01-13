@@ -10,8 +10,6 @@ namespace TensionDev.Maritime.Navigation
     /// </summary>
     public class VesselTrack
     {
-        private GeographicCoordinateSystem vesselCoordinates;
-        private double speedOverGround;
         private double courseOverGround;
 
         private const double KNOTS_METRES_PER_SECOND = 0.514444;
@@ -21,25 +19,25 @@ namespace TensionDev.Maritime.Navigation
         /// </summary>
         public VesselTrack()
         {
-            vesselCoordinates = new GeographicCoordinateSystem();
-            speedOverGround = 0.0;
+            VesselCoordinates = new GeographicCoordinateSystem();
+            SpeedOverGroundMetresPerSecond = 0.0;
             courseOverGround = 0.0;
         }
 
         /// <summary>
         /// Vessel Coordinates
         /// </summary>
-        public GeographicCoordinateSystem VesselCoordinates { get => vesselCoordinates; set => vesselCoordinates = value; }
+        public GeographicCoordinateSystem VesselCoordinates { get; set; }
 
         /// <summary>
         /// Speed Over Ground in Knots
         /// </summary>
-        public Double SpeedOverGroundKnots { get => speedOverGround / KNOTS_METRES_PER_SECOND; set => SpeedOverGroundMetresPerSecond = value * KNOTS_METRES_PER_SECOND; }
+        public Double SpeedOverGroundKnots { get => SpeedOverGroundMetresPerSecond / KNOTS_METRES_PER_SECOND; set => SpeedOverGroundMetresPerSecond = value * KNOTS_METRES_PER_SECOND; }
 
         /// <summary>
         /// Speed Over Ground in Metres per Second
         /// </summary>
-        public Double SpeedOverGroundMetresPerSecond { get => speedOverGround; set => speedOverGround = value; }
+        public Double SpeedOverGroundMetresPerSecond { get; set; }
 
         /// <summary>
         /// Course Over Ground in Radians

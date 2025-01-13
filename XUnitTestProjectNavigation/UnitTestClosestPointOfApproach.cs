@@ -208,6 +208,78 @@ namespace XUnitTestProjectNavigation
             Assert.InRange(actualTCPA, lowTCPA, highTCPA);
         }
 
+        [Fact]
+        public void TestCalculateCPAandTCPA7()
+        {
+            VesselTrack ownVessel = new VesselTrack()
+            {
+                VesselCoordinates = new GeographicCoordinateSystem()
+                {
+                    LatitudeDecimalRadians = 0.02196,
+                    LongitudeDecimalRadians = 1.81446,
+                },
+                SpeedOverGroundKnots = 1.04226,
+                CourseOverGroundDegrees = 180,
+            };
+            VesselTrack targetVessel = new VesselTrack()
+            {
+                VesselCoordinates = new GeographicCoordinateSystem()
+                {
+                    LatitudeDecimalRadians = 0.02190,
+                    LongitudeDecimalRadians = 1.81424,
+                },
+                SpeedOverGroundKnots = 1.04226,
+                CourseOverGroundDegrees = 180,
+            };
+
+            double lowCPA = 0.78;
+            double highCPA = 0.79;
+            double lowTCPA = -1;
+            double highTCPA = 1;
+
+            ClosestPointOfApproach.CalculateCPAandTCPA(ownVessel, targetVessel, out double actualCPA, out double actualTCPA);
+            actualCPA /= METRE_TO_NAUTICALMILES;
+
+            Assert.InRange(actualCPA, lowCPA, highCPA);
+            Assert.InRange(actualTCPA, lowTCPA, highTCPA);
+        }
+
+        [Fact]
+        public void TestCalculateCPAandTCPA8()
+        {
+            VesselTrack ownVessel = new VesselTrack()
+            {
+                VesselCoordinates = new GeographicCoordinateSystem()
+                {
+                    LatitudeDecimalRadians = 0.02196,
+                    LongitudeDecimalRadians = 1.81446,
+                },
+                SpeedOverGroundKnots = 1.04226,
+                CourseOverGroundDegrees = 270,
+            };
+            VesselTrack targetVessel = new VesselTrack()
+            {
+                VesselCoordinates = new GeographicCoordinateSystem()
+                {
+                    LatitudeDecimalRadians = 0.02190,
+                    LongitudeDecimalRadians = 1.81424,
+                },
+                SpeedOverGroundKnots = 1.04226,
+                CourseOverGroundDegrees = 270,
+            };
+
+            double lowCPA = 0.78;
+            double highCPA = 0.79;
+            double lowTCPA = -1;
+            double highTCPA = 1;
+
+            ClosestPointOfApproach.CalculateCPAandTCPA(ownVessel, targetVessel, out double actualCPA, out double actualTCPA);
+            actualCPA /= METRE_TO_NAUTICALMILES;
+
+            Assert.InRange(actualCPA, lowCPA, highCPA);
+            Assert.InRange(actualTCPA, lowTCPA, highTCPA);
+        }
+
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)
