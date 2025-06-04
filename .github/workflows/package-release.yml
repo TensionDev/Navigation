@@ -1,6 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
 name: Package Release
+permissions:
+  contents: read
+  packages: write
 
 # Controls when the workflow will run
 on:
